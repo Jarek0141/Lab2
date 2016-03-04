@@ -50,6 +50,14 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
+ xb:=StrToFloat(Edit1.Text);
+  xe:=StrToFloat(Edit2.Text);
+  st:=StrToFloat(Edit3.Text);
+
+ if xb<xe then
+
+  begin
+
  ExcelApp := CreateOleObject('Excel.Application') as ExcelApplication;
 
   ExcelApp.Visible[0] := True;
@@ -60,10 +68,6 @@ begin
 
   ExcelApp.Application.ReferenceStyle[0] := xlA1;
 
-
-  xb:=StrToFloat(Edit1.Text);
-  xe:=StrToFloat(Edit2.Text);
-  st:=StrToFloat(Edit3.Text);
 
 
 
@@ -113,6 +117,10 @@ MyDisp:=mchart.Axes(xlCategory, xlPrimary, 0);
 
 ExcelApp.Application.ActiveWorkbook.ActiveChart.SetElement(328);
 
+
+  end
+  else
+  ShowMessage('неверный ввод данных');
 
 end;
 
