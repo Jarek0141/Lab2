@@ -116,6 +116,7 @@ MyDisp:=mchart.Axes(xlCategory, xlPrimary, 0);
     mAxis.AxisTitle.Caption:='Y';
 
 ExcelApp.Application.ActiveWorkbook.ActiveChart.SetElement(328);
+ExcelApp.Application.ActiveWorkbook.ActiveChart.Legend[0].Delete;
 
 
   end
